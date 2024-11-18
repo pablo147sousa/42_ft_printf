@@ -1,39 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_itoh.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/15 17:19:05 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/18 16:15:00 by pmoreira         ###   ########.fr       */
+/*   Created: 2024/11/18 11:06:08 by pmoreira          #+#    #+#             */
+/*   Updated: 2024/11/18 16:27:22 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFTPRINTF_H
-# define LIBFTPRINTF_H
-
-#include <stddef.h>
-#include <unistd.h>
-
-int		ft_printf(const char *input, ...);
-
-int		ft_atoi(const char *nptr);
-
-char	*ft_strdup(const char *s);
-
-char	*ft_itoa(int n);
-
-void	ft_bzero(void *s, size_t n);
-
-void	*ft_calloc(size_t nmemb, size_t size);
-
-void	ft_putchar(char c);
-
-void	ft_putstr(char *s);
-
-void	ft_putnbr(int n);
+#include "libftprintf.h"
 
 void	ft_itoh(int nbr, char type);
 
-#endif
+void	ft_itoh(int nbr, char type)
+{
+	char	*base;
+
+	if (type == 'x')
+		base = "0123456789abcdef";
+	else if (type == 'X')
+		base = "0123456789ABCDEF";
+	while (nbr >= 16)
+	{
+		ft_itoh((nbr / 16), type);
+		ft_itoh((nbr % 16), type);
+	}
+	if (nbr < 16)
+		ft_putchar(base[nbr]);
+}
