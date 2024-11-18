@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:14:38 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/18 10:52:02 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/11/18 11:00:42 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	ft_inputtype(char *s, va_list item)
 	if (*s == 'c')
 		ft_itoa(va_arg (item, char));
 	if (*s == 's')
-		ft_strdup(va_arg(item, char *));
+		ft_putstr(va_arg(item, char *));
 	if (*s == 'p')
 		ft_strdup(item);
 	if (*s == 'd')
