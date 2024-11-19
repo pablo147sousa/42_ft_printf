@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 10:55:13 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/19 13:58:14 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/11/19 14:43:21 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,5 +54,7 @@ int	ft_printnbr(int num)
 		num /= 10;
 	}
 	ft_putnbr(temp);
+	if (temp == 0 || temp < INT_MIN || temp > INT_MAX)
+		size = 1;
 	return (size);
 }

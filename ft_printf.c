@@ -6,13 +6,12 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:14:38 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/19 14:23:28 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/11/19 14:41:26 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdarg.h>
-#include <stdio.h>
 
 static int	ft_inputtype(const char *s, va_list item);
 
@@ -62,7 +61,11 @@ int	ft_printf(const char *input, ...)
 	}
 	return (count);
 }
-/* 
+
+/*
+#include <stdio.h>
+#include <limits.h>
+
 int	main(void)
 {
 	char	*str;
@@ -89,9 +92,9 @@ int	main(void)
 	printf("Result:%d\n", result);
 	printf("----------------\n");
 
-	result = printf("Expected:%d\n", 2+2);
+	result = printf("Expected:%d\n", LONG_MIN);
 	printf("Expected:%d\n", result);
-	result = ft_printf("--Result:%d\n", 2+2);
+	result = ft_printf("--Result:%d\n", LONG_MIN);
 	printf("Result:%d\n", result);
 	printf("----------------\n");
 
@@ -145,4 +148,4 @@ int	main(void)
 	printf("----------------\n");
 	return (0);
 }
- */
+*/
