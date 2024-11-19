@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:14:38 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/19 11:02:15 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/11/19 12:42:46 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,16 @@ static int	ft_inputtype(const char *s, va_list item)
 		return (ft_putchar(va_arg (item, int)));
 	if (*s == 's')
 		return (ft_putstr(va_arg(item, char *)));
-	if (*s == 'd')
-		return (ft_putnbr(va_arg(item, int)));
+	if (*s == 'd' || *s == 'i')
+		return (ft_printnbr(va_arg(item, int)));
 	if (*s == 'x')
-		return (ft_itoh(va_arg(item, unsigned long), 'x'));
+		return (ft_itoh(va_arg(item, unsigned int), 'x'));
 	if (*s == 'X')
-		return (ft_itoh(va_arg(item, unsigned long), 'X'));
+		return (ft_itoh(va_arg(item, unsigned int), 'X'));
 	if (*s == '%')
 		return (ft_putchar('%'));
+	if (*s == 'u')
+		return (ft_printunbr(va_arg(item, unsigned int)));
 	return (0);
 }
 
@@ -44,8 +46,8 @@ int	ft_printf(const char *input, ...)
 	{
 		if (*input == '%')
 		{
+			count += ft_inputtype(++input, args);
 			input++;
-			count += ft_inputtype(input, args);
 		}
 		else
 		{
@@ -60,11 +62,58 @@ int	ft_printf(const char *input, ...)
 int	main(void)
 {
 	char	*str;
+	char	letter;
 	int		result;
+
+	
+	result = printf("Expected:\n");
+	printf("Expected:%d\n", result);
+	result = ft_printf("--Result:\n");
+	printf("Result:%d\n", result);
+	printf("----------------\n");
 
 	str = "teste de";
 	result = printf("Expected:%s\n",str);
 	printf("Expected:%d\n", result);
-	//ft_printf("Result:%s\n",str);
+	result = ft_printf("--Result:%s\n", str);
+	printf("Result:%d\n", result);
+	printf("----------------\n");
+
+	letter = 'c';
+	result = printf("Expected:%c\n", letter);
+	printf("Expected:%d\n", result);
+	result = ft_printf("--Result:%c\n", letter);
+	printf("Result:%d\n", result);
+	printf("----------------\n");
+
+	result = printf("Expected:%d\n", 2+2);
+	printf("Expected:%d\n", result);
+	result = ft_printf("--Result:%d\n", 2+2);
+	printf("Result:%d\n", result);
+	printf("----------------\n");
+
+	result = printf("Expected:%%\n");
+	printf("Expected:%d\n", result);
+	result = ft_printf("--Result:%%\n");
+	printf("Result:%d\n", result);
+	printf("----------------\n");
+
+	result = printf("Expected:%X\n", (unsigned int)555555555555);
+	printf("Expected:%d\n", result);
+	result = ft_printf("--Result:%X\n", (unsigned int)555555555555);
+	printf("Result:%d\n", result);
+	printf("----------------\n");
+
+	result = printf("Expected:%i\n", 200 + 55);
+	printf("Expected:%d\n", result);
+	result = ft_printf("--Result:%i\n", 200 + 55);
+	printf("Result:%d\n", result);
+	printf("----------------\n");
+
+	result = printf("Expected:%u\n", (unsigned int)555555555555);
+	printf("Expected:%d\n", result);
+	result = ft_printf("--Result:%u\n", (unsigned int)555555555555);
+	printf("Result:%d\n", result);
+	printf("----------------\n");
 	return (0);
 }

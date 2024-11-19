@@ -1,6 +1,6 @@
 NAME = libftprintf.a
 
-C_SOURCE = ft_putchar.c ft_putstr.c ft_putnbr.c ft_itoh.c
+C_SOURCE = ft_putchar.c ft_putstr.c ft_printnbr.c ft_itoh.c
 
 H_SOURCE = ./
 

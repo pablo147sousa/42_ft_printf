@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 17:19:05 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/19 10:57:20 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/11/19 12:38:49 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ int		ft_putstr(char *s);
 
 int		ft_printnbr(int n);
 
-int		ft_itoh(unsigned long nbr, char type);
+int		ft_itoh(unsigned int nbr, char type);
+
+int		ft_printunbr(unsigned int num);
 
 #endif

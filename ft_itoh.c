@@ -6,15 +6,16 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 11:06:08 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/19 10:23:54 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/11/19 12:29:11 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_itoh(unsigned long nbr, char type);
+int			ft_itoh(unsigned int nbr, char type);
+static void	ft_printhex(unsigned int nbr, char type);
 
-int	ft_itoh(unsigned long nbr, char type)
+static void	ft_printhex(unsigned int nbr, char type)
 {
 	char	*base;
 
@@ -22,11 +23,27 @@ int	ft_itoh(unsigned long nbr, char type)
 		base = "0123456789abcdef";
 	else if (type == 'X')
 		base = "0123456789ABCDEF";
-	while (nbr >= 16)
-	{
-		ft_itoh((nbr / 16), type);
-		ft_itoh((nbr % 16), type);
-	}
 	if (nbr < 16)
 		ft_putchar(base[nbr]);
+	else if (nbr >= 16)
+	{
+		ft_printhex((nbr / 16), type);
+		ft_printhex((nbr % 16), type);
+	}
+}
+
+int	ft_itoh(unsigned int nbr, char type)
+{
+	int				size;
+	unsigned int	temp;
+
+	size = 0;
+	temp = nbr;
+	while (nbr > 0)
+	{
+		nbr /= 16;
+		size++;
+	}
+	ft_printhex(temp, type);
+	return (size);
 }

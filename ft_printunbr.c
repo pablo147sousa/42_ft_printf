@@ -1,29 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printnbr.c                                      :+:      :+:    :+:   */
+/*   ft_printunbr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/19 10:55:13 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/19 12:36:34 by pmoreira         ###   ########.fr       */
+/*   Created: 2024/11/19 12:34:25 by pmoreira          #+#    #+#             */
+/*   Updated: 2024/11/19 12:41:42 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-#include <limits.h>
 
-int			ft_printnbr(int n);
-static void	ft_putnbr(int n);
+int	ft_printunbr(unsigned int n);
+static void ft_putnbr(unsigned int n);
 
-static void	ft_putnbr(int n)
+static void ft_putnbr(unsigned int n)
 {
-	if (n == INT_MIN)
-	{
-		write(1, "-2147483648", 11);
-		return ;
-	}
-	if (n >= 0 && n <= 9)
+	if (n == 0)
+		ft_putchar((n + '0'));
+	if (n > 0 && n <= 9)
 	{
 		ft_putchar((n + '0'));
 	}
@@ -32,22 +28,15 @@ static void	ft_putnbr(int n)
 		ft_putnbr((n / 10));
 		ft_putchar(((n % 10) + '0'));
 	}
-	else
-	{
-		write(1, "-", 1);
-		ft_putnbr((n * (-1)));
-	}
 }
 
-int	ft_printnbr(int num)
+int	ft_printunbr(unsigned int num)
 {
-	int	size;
-	int	temp;
+	int size;
+	int temp;
 
 	size = 0;
 	temp = num;
-	if (num < 0)
-		size++;
 	while (num != 0)
 	{
 		size++;
