@@ -6,11 +6,11 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 11:06:08 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/19 12:29:11 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/11/19 13:58:14 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int			ft_itoh(unsigned int nbr, char type);
 static void	ft_printhex(unsigned int nbr, char type);

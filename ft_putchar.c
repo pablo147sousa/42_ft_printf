@@ -6,11 +6,11 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:15:17 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/19 10:55:48 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/11/19 13:58:14 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_putchar(int c)
 {

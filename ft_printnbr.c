@@ -6,11 +6,11 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 10:55:13 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/19 12:36:34 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/11/19 13:58:14 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 #include <limits.h>
 
 int			ft_printnbr(int n);
