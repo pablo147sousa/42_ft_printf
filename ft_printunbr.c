@@ -6,16 +6,16 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 12:34:25 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/19 12:41:42 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/11/19 13:44:08 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_printunbr(unsigned int n);
-static void ft_putnbr(unsigned int n);
+int			ft_printunbr(unsigned int n);
+static void	ft_putnbr(unsigned int n);
 
-static void ft_putnbr(unsigned int n)
+static void	ft_putnbr(unsigned int n)
 {
 	if (n == 0)
 		ft_putchar((n + '0'));
@@ -32,8 +32,8 @@ static void ft_putnbr(unsigned int n)
 
 int	ft_printunbr(unsigned int num)
 {
-	int size;
-	int temp;
+	int	size;
+	int	temp;
 
 	size = 0;
 	temp = num;

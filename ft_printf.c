@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:14:38 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/19 12:42:46 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/11/19 13:43:05 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ static int	ft_inputtype(const char *s, va_list item)
 		return (ft_putchar('%'));
 	if (*s == 'u')
 		return (ft_printunbr(va_arg(item, unsigned int)));
+	if (*s == 'p')
+		return (ft_printptr(va_arg(item, unsigned long)));
 	return (0);
 }
 
@@ -40,6 +42,8 @@ int	ft_printf(const char *input, ...)
 	va_list	args;
 	int		count;
 
+	if (input == 0)
+		return (-1);
 	va_start (args, input);
 	count = 0;
 	while (*input)
@@ -58,14 +62,14 @@ int	ft_printf(const char *input, ...)
 	}
 	return (count);
 }
-
+/*
 int	main(void)
 {
 	char	*str;
 	char	letter;
 	int		result;
 
-	
+
 	result = printf("Expected:\n");
 	printf("Expected:%d\n", result);
 	result = ft_printf("--Result:\n");
@@ -98,6 +102,12 @@ int	main(void)
 	printf("Result:%d\n", result);
 	printf("----------------\n");
 
+	result = printf("Expected:%x\n", (unsigned int)555555555555);
+	printf("Expected:%d\n", result);
+	result = ft_printf("--Result:%x\n", (unsigned int)555555555555);
+	printf("Result:%d\n", result);
+	printf("----------------\n");
+
 	result = printf("Expected:%X\n", (unsigned int)555555555555);
 	printf("Expected:%d\n", result);
 	result = ft_printf("--Result:%X\n", (unsigned int)555555555555);
@@ -115,5 +125,12 @@ int	main(void)
 	result = ft_printf("--Result:%u\n", (unsigned int)555555555555);
 	printf("Result:%d\n", result);
 	printf("----------------\n");
+
+	result = printf("Expected:%p\n", str);
+	printf("Expected:%d\n", result);
+	result = ft_printf("--Result:%p\n", str);
+	printf("Result:%d\n", result);
+	printf("----------------\n");
 	return (0);
 }
+*/

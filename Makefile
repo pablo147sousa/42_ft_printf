@@ -1,6 +1,7 @@
 NAME = libftprintf.a
 
-C_SOURCE = ft_putchar.c ft_putstr.c ft_printnbr.c ft_itoh.c
+C_SOURCE = ft_putchar.c ft_putstr.c ft_printnbr.c ft_itoh.c ft_printunbr.c ft_printptr.c \
+ft_printf.c
 
 H_SOURCE = ./
 
@@ -24,6 +25,6 @@ clean:
 	$(RM) $(OBJ)
 
 fclean: clean
-	(RM) $(NAME)
+	$(RM) $(NAME)
 
 re: fclean all
