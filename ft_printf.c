@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:14:38 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/19 13:58:14 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/11/19 14:23:28 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,13 +62,12 @@ int	ft_printf(const char *input, ...)
 	}
 	return (count);
 }
-/*
+/* 
 int	main(void)
 {
 	char	*str;
 	char	letter;
 	int		result;
-
 
 	result = printf("Expected:\n");
 	printf("Expected:%d\n", result);
@@ -131,6 +130,19 @@ int	main(void)
 	result = ft_printf("--Result:%p\n", str);
 	printf("Result:%d\n", result);
 	printf("----------------\n");
+
+	//-Wno-format
+	result = printf(" NULL %s NULL \n", NULL);
+	printf("Expected:%d\n", result);
+	result = ft_printf(" NULL %s NULL \n", NULL);
+	printf("Result:%d\n", result);
+	printf("----------------\n");
+
+	result = printf(" %p %p \n", 0, 0);
+	printf("Expected:%d\n", result);
+	result = ft_printf(" %p %p \n", 0, 0);
+	printf("Result:%d\n", result);
+	printf("----------------\n");
 	return (0);
 }
-*/
+ */

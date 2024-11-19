@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/19 13:47:26 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/19 13:58:14 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/11/19 14:22:34 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,11 @@ int	ft_printptr(unsigned long ptr)
 	int				size;
 	unsigned long	temp;
 
+	if (ptr == 0)
+	{
+		write(1, "(nil)", 5);
+		return (5);
+	}
 	size = 0;
 	temp = ptr;
 	while (ptr > 0)
