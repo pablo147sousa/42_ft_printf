@@ -6,15 +6,15 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 11:06:08 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/18 16:27:22 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/11/19 10:23:54 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_itoh(int nbr, char type);
+int	ft_itoh(unsigned long nbr, char type);
 
-void	ft_itoh(int nbr, char type)
+int	ft_itoh(unsigned long nbr, char type)
 {
 	char	*base;
 

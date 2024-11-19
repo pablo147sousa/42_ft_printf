@@ -6,17 +6,22 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/18 10:19:24 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/18 10:19:53 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/11/19 10:56:43 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-void	ft_putstr(char *s)
+int	ft_putstr(char *s)
 {
+	int	size;
+
+	size = 0;
 	while (*s)
 	{
 		write(1, s, 1);
 		s++;
+		size++;
 	}
+	return (size);
 }

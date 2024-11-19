@@ -1,7 +1,6 @@
-NAME = ibftprintf.a
+NAME = libftprintf.a
 
-C_SOURCE = ft_printf.c ft_atoi.c ft_strdup.c ft_itoa.c ft_bzero.c ft_calloc.c ft_putchar.c \
-ft_putstr.c ft_putnbr.c ft_itoh.c
+C_SOURCE = ft_putchar.c ft_putstr.c ft_putnbr.c ft_itoh.c
 
 H_SOURCE = ./
 

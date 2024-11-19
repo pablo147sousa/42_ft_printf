@@ -6,15 +6,15 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 17:19:05 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/18 16:15:00 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/11/19 10:57:20 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFTPRINTF_H
 # define LIBFTPRINTF_H
 
-#include <stddef.h>
-#include <unistd.h>
+# include <stddef.h>
+# include <unistd.h>
 
 int		ft_printf(const char *input, ...);
 
@@ -28,12 +28,12 @@ void	ft_bzero(void *s, size_t n);
 
 void	*ft_calloc(size_t nmemb, size_t size);
 
-void	ft_putchar(char c);
+int		ft_putchar(int c);
 
-void	ft_putstr(char *s);
+int		ft_putstr(char *s);
 
-void	ft_putnbr(int n);
+int		ft_printnbr(int n);
 
-void	ft_itoh(int nbr, char type);
+int		ft_itoh(unsigned long nbr, char type);
 
 #endif
