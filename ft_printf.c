@@ -6,7 +6,7 @@
 /*   By: pmoreira <pmoreira@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/15 11:14:38 by pmoreira          #+#    #+#             */
-/*   Updated: 2024/11/19 14:41:26 by pmoreira         ###   ########.fr       */
+/*   Updated: 2024/11/20 15:19:16 by pmoreira         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,9 @@ int	main(void)
 	printf("Result:%d\n", result);
 	printf("----------------\n");
 
-	result = printf("Expected:%d\n", LONG_MIN);
+	result = printf("Expected:%d\n", 200 + 55);
 	printf("Expected:%d\n", result);
-	result = ft_printf("--Result:%d\n", LONG_MIN);
+	result = ft_printf("--Result:%d\n", 200 + 55);
 	printf("Result:%d\n", result);
 	printf("----------------\n");
 
@@ -135,15 +135,51 @@ int	main(void)
 	printf("----------------\n");
 
 	//-Wno-format
-	result = printf(" NULL %s NULL \n", NULL);
+	result = printf("Expected:NULL %s NULL \n", NULL);
 	printf("Expected:%d\n", result);
-	result = ft_printf(" NULL %s NULL \n", NULL);
+	result = ft_printf("--Result:NULL %s NULL \n", NULL);
 	printf("Result:%d\n", result);
 	printf("----------------\n");
 
-	result = printf(" %p %p \n", 0, 0);
+	result = printf("Expected:%p %p \n", 0, 0);
 	printf("Expected:%d\n", result);
-	result = ft_printf(" %p %p \n", 0, 0);
+	result = ft_printf("--Result:%p %p \n", 0, 0);
+	printf("Result:%d\n", result);
+	printf("----------------\n");
+
+	result = printf("Expected:%X\n", LONG_MIN);
+	printf("Expected:%d\n", result);
+	result = ft_printf("--Result:%X\n", LONG_MIN);
+	printf("Result:%d\n", result);
+	printf("----------------\n");
+
+	result = printf("Expected:%X\n", LONG_MAX);
+	printf("Expected:%d\n", result);
+	result = ft_printf("--Result:%X\n", LONG_MAX);
+	printf("Result:%d\n", result);
+	printf("----------------\n");
+
+	result = printf("Expected:%d\n", LONG_MAX);
+	printf("Expected:%d\n", result);
+	result = ft_printf("--Result:%d\n", LONG_MAX);
+	printf("Result:%d\n", result);
+	printf("----------------\n");
+
+	result = printf("Expected:%d\n", LONG_MIN);
+	printf("Expected:%d\n", result);
+	result = ft_printf("--Result:%d\n", LONG_MIN);
+	printf("Result:%d\n", result);
+	printf("----------------\n");
+
+	result = printf("Expected:%i\n", LONG_MAX);
+	printf("Expected:%d\n", result);
+	result = ft_printf("--Result:%i\n", LONG_MAX);
+	printf("Result:%d\n", result);
+	printf("----------------\n");
+
+	result = printf("Expected:%i\n", LONG_MIN);
+	printf("Expected:%d\n", result);
+	result = ft_printf("--Result:%i\n", LONG_MIN);
 	printf("Result:%d\n", result);
 	printf("----------------\n");
 	return (0);
