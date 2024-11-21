@@ -18,7 +18,7 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rcs $@ $^
 
-%.o: %.cc
+%.o: %.c
 	$(CC) $(CC_FLAGS) -I $(H_SOURCE) -c $< -o $@
 
 clean:
